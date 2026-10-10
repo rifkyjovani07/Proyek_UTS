@@ -6,19 +6,6 @@ Program Python sederhana untuk mencatat dan menganalisis pengeluaran harian. Dib
 
 Program ini membaca data pengeluaran dari file `data.txt`, menganalisis total, rata-rata, dan pengeluaran terbesar, lalu menuliskan laporan ke `laporan.txt`. Program juga dilengkapi dengan pengujian otomatis menggunakan `unittest`.
 
-## Struktur Folder
-Proyek_UTS/
--main.py 
--data.txt 
--laporan.txt
-
--package/
--init.py 
--fileio.py 
--processing.py 
--validasi.py 
--testing.py 
-
 ## Fitur
 
 - Membaca data pengeluaran dari file (`mode r`)
