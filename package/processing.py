@@ -1,0 +1,42 @@
+class Pengeluaran:
+    def __init__(self, tanggal, ket, jumlah):
+        self.tanggal = tanggal
+        self.ket = ket
+        self.jumlah = jumlah
+
+    def info(self):
+        return f"{self.tanggal} | {self.ket} | Rp{self.jumlah:,}"
+
+
+class BukuKas:
+    def __init__(self):
+        self.data = []
+
+    def tambah(self, pengeluaran):
+        self.data.append(pengeluaran)
+
+    def total(self):
+        return sum(p.jumlah for p in self.data)
+
+    def rata(self):
+        return self.total() / len(self.data) if self.data else 0
+
+    def terbesar(self):
+        return max(self.data, key=lambda p: p.jumlah) if self.data else None
+
+    def urut(self):
+        return sorted(self.data, key=lambda p: p.jumlah, reverse=True)
+
+
+def total(*args):
+    return sum(args)
+
+
+def ringkasan(data):
+    if not data:
+        return "Tidak ada data."
+    return (
+        f"Total : Rp{total(*(d['jumlah'] for d in data)):,}\n"
+        f"Rata-rata : Rp{total(*(d['jumlah'] for d in data)) / len(data):,.0f}\n"
+        f"Terbesar : {max(data, key=lambda d: d['jumlah'])['ket']}\n"
+    )
