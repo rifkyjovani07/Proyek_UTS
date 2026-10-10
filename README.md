@@ -8,15 +8,16 @@ Program ini membaca data pengeluaran dari file `data.txt`, menganalisis total, r
 
 ## Struktur Folder
 Proyek_UTS/
-├── main.py 
-├── data.txt 
-├── laporan.txt
-└── package/
-├── init.py 
-├── fileio.py 
-├── processing.py 
-├── validasi.py 
-└── testing.py 
+-main.py 
+-data.txt 
+-laporan.txt
+
+-package/
+-init.py 
+-fileio.py 
+-processing.py 
+-validasi.py 
+-testing.py 
 
 ## Fitur
 
