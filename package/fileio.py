@@ -1,4 +1,4 @@
-#Buat file untuk pertama kali
+#Buat file untuk pertama kali pakai mode 'x'
 def buat_file(nama):
     try:
         with open(nama, "x") as f:
@@ -7,12 +7,12 @@ def buat_file(nama):
         print(f"File '{nama}' sudah ada.")
 
 
-#Menambah data
+#Menambah data pakai mode 'a'
 def tambah(nama, **data):
     with open(nama, "a") as f:
         f.write(f"{data['tanggal']};{data['ket']};{data['jumlah']}\n")
 
-#Membaca file
+#Membaca file baris demi baris pakai mode 'r'
 def baca(nama):
     hasil = []
     try:
@@ -27,7 +27,7 @@ def baca(nama):
         print(f"File '{nama}' tidak ada.")
     return hasil
 
-#Buat laporan
+#Menulis laporan dengan mode 'w'
 def tulis_laporan(nama, isi):
     with open(nama, "w") as f:
         f.write(isi)

@@ -29,6 +29,7 @@ def main():
     for p in kas.data:
         print("  " + p.info())
 
+    #Analisis pakai BukuKas (class)
     print()
     print(f"Total : Rp{kas.total():,}")
     print(f"Rata-rata : Rp{kas.rata():,.0f}")

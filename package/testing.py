@@ -4,8 +4,8 @@ from package.validasi import cek_jumlah
 
 
 class TestPengeluaran(unittest.TestCase):
-
     def setUp(self):
+        #Contoh data yang dipakai untuk semua test/pengujian
         self.data = [
             {"tanggal": "2026-01-01", "ket": "Makan", "jumlah": 25000},
             {"tanggal": "2026-01-02", "ket": "Belanja", "jumlah": 100000},
@@ -17,22 +17,28 @@ class TestPengeluaran(unittest.TestCase):
         self.kas.tambah(Pengeluaran("2026-01-03", "Kopi", 18000))
 
     def test_total(self):
+        # Cek total: 25000 + 100000 + 18000 = 143000
         self.assertEqual(total(25000, 100000, 18000), 143000)
 
     def test_bukukas_total(self):
+        # Cek total dari BukuKas = 143000
         self.assertEqual(self.kas.total(), 143000)
 
     def test_bukukas_rata(self):
+        # Cek rata-rata = 143000 dibagi 3
         self.assertEqual(self.kas.rata(), 143000 / 3)
 
     def test_bukukas_terbesar(self):
+        # Cek pengeluaran terbesar = Belanja
         self.assertEqual(self.kas.terbesar().ket, "Belanja")
 
     def test_bukukas_urut(self):
+        # Cek urutan pertama = Belanja karena paling besar
         hasil = self.kas.urut()
         self.assertEqual(hasil[0].ket, "Belanja")
 
     def test_validasi(self):
+        # Cek kalau jumlah negatif, harus muncul error
         with self.assertRaises(ValueError):
             cek_jumlah(-100)
 
