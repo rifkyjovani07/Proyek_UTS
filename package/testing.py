@@ -30,12 +30,12 @@ class TestPengeluaran(unittest.TestCase):
 
     def test_bukukas_terbesar(self):
         # Cek pengeluaran terbesar = Belanja
-        self.assertEqual(self.kas.terbesar().ket, "Belanja")
+        self.assertEqual(self.kas.terbesar().keterangan, "Belanja")
 
     def test_bukukas_urut(self):
         # Cek urutan pertama = Belanja karena paling besar
         hasil = self.kas.urut()
-        self.assertEqual(hasil[0].ket, "Belanja")
+        self.assertEqual(hasil[0].keterangan, "Belanja")
 
     def test_validasi(self):
         # Cek kalau jumlah negatif, harus muncul error

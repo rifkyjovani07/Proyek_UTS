@@ -1,12 +1,12 @@
 #Class untuk satu pengeluaran
 class Pengeluaran:
-    def __init__(self, tanggal, ket, jumlah):
+    def __init__(self, tanggal, keterangan, jumlah):
         self.tanggal = tanggal
-        self.ket = ket
+        self.keterangan = keterangan
         self.jumlah = jumlah
 
     def info(self):
-        return f"{self.tanggal} | {self.ket} | Rp{self.jumlah:,}"
+        return f"{self.tanggal} | {self.keterangan} | Rp{self.jumlah:,}"
 
 #Class untuk mengelola kumpulan pengeluaran
 class BukuKas:
@@ -43,8 +43,10 @@ def total(*args):
 def ringkasan(data):
     if not data:
         return "Tidak ada data."
+    semua = [d['jumlah'] for d in data]
+    total_semua = total(*semua)
     return (
-        f"Total : Rp{total(*(d['jumlah'] for d in data)):,}\n"
-        f"Rata-rata : Rp{total(*(d['jumlah'] for d in data)) / len(data):,.0f}\n"
-        f"Terbesar : {max(data, key=lambda d: d['jumlah'])['ket']}\n"
+        f"Total : Rp{total_semua:,}\n"
+        f"Rata-rata : Rp{total_semua / len(data):,.0f}\n"
+        f"Terbesar : {max(data, key=lambda d: d['jumlah'])['keterangan']}\n"
     )

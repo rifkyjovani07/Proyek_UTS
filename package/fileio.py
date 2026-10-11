@@ -10,7 +10,7 @@ def buat_file(nama):
 #Menambah data pakai mode 'a'
 def tambah(nama, **data):
     with open(nama, "a") as f:
-        f.write(f"{data['tanggal']};{data['ket']};{data['jumlah']}\n")
+        f.write(f"{data['tanggal']};{data['keterangan']};{data['jumlah']}\n")
 
 #Membaca file baris demi baris pakai mode 'r'
 def baca(nama):
@@ -19,8 +19,8 @@ def baca(nama):
         with open(nama, "r") as f:
             for baris in f:
                 try:
-                    tgl, ket, jml = baris.strip().split(";")
-                    hasil.append({"tanggal": tgl, "ket": ket, "jumlah": int(jml)})
+                    tanggal, keterangan, jumlah = baris.strip().split(";")
+                    hasil.append({"tanggal": tanggal, "keterangan": keterangan, "jumlah": int(jumlah)})
                 except ValueError:
                     continue
     except FileNotFoundError:

@@ -3,7 +3,6 @@ from package import fileio, processing, validasi
 FILE = "data.txt"
 LAPORAN = "laporan.txt"
 
-
 def main():
     # Buat file untuk pertama kali
     fileio.buat_file(FILE)
@@ -12,7 +11,7 @@ def main():
     try:
         validasi.cek_jumlah(18000)
         validasi.cek_field("Kopi")
-        fileio.tambah(FILE, tanggal="2026-01-04", ket="Kopi", jumlah=18000)
+        fileio.tambah(FILE, tanggal="2026-01-04", keterangan="Kopi", jumlah=18000)
     except ValueError as e:
         print(f"Gagal: {e}")
 
@@ -22,7 +21,7 @@ def main():
     #Memasukkan data ke BukuKas
     kas = processing.BukuKas()
     for d in data:
-        kas.tambah(processing.Pengeluaran(d["tanggal"], d["ket"], d["jumlah"]))
+        kas.tambah(processing.Pengeluaran(d["tanggal"], d["keterangan"], d["jumlah"]))
 
     #Menampilkan data
     print("Semua data:")
@@ -42,7 +41,6 @@ def main():
     #Tulis laporan
     fileio.tulis_laporan(LAPORAN, processing.ringkasan(data))
     print(f"\nLaporan ditulis ke '{LAPORAN}'.")
-
 
 if __name__ == '__main__':
     main()
