@@ -43,8 +43,8 @@ def total(*args):
 def ringkasan(data):
     if not data:
         return "Tidak ada data."
-    semua = [d['jumlah'] for d in data]
-    total_semua = total(*semua)
+    semua_jumlah = [d['jumlah'] for d in data]
+    total_semua = total(*semua_jumlah)
     return (
         f"Total : Rp{total_semua:,}\n"
         f"Rata-rata : Rp{total_semua / len(data):,.0f}\n"
