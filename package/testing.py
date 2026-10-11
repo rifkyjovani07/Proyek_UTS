@@ -7,9 +7,9 @@ class TestPengeluaran(unittest.TestCase):
     def setUp(self):
         #Contoh data yang dipakai untuk semua test/pengujian
         self.data = [
-            {"tanggal": "2026-01-01", "ket": "Makan", "jumlah": 25000},
-            {"tanggal": "2026-01-02", "ket": "Belanja", "jumlah": 100000},
-            {"tanggal": "2026-01-03", "ket": "Kopi", "jumlah": 18000},
+            {"tanggal": "2026-01-01", "keterangan": "Makan", "jumlah": 25000},
+            {"tanggal": "2026-01-02", "keterangan": "Belanja", "jumlah": 100000},
+            {"tanggal": "2026-01-03", "keterangan": "Kopi", "jumlah": 18000},
         ]
         self.kas = BukuKas()
         self.kas.tambah(Pengeluaran("2026-01-01", "Makan", 25000))
