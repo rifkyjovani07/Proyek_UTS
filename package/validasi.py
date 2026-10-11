@@ -1,9 +1,11 @@
 #Memastikan bahawa jumlah adalah angka positif
 def cek_jumlah(jumlah):
+    assert isinstance(jumlah, int), "Jumlah harus int"
+
     if jumlah < 0:
         raise ValueError("Jumlah tidak boleh negatif.")
-    assert isinstance(jumlah, int), "Jumlah harus int"
-    return True
+    
+    return jumlah
 
 #Memastikam field tidak kosong
 def cek_field(teks):
